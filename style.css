@@ -241,6 +241,47 @@ pre {
   font-family: monospace;
 }
 
+body {
+  background-color: #eaf4fe;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #183b6b;
+}
+
+a.button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 15px;
+  background-color: #4285f4;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+a.button:hover {
+  background-color: #3367d6;
+}
+
+ul, ol {
+  text-align: left;
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 1.8;
+}
+
+a {
+  color: #3367d6;
+}
+
+
 
 
 
