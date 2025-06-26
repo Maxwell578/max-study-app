@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback - MaxStudyApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Dark mode styles */
+    body.dark {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    body.dark input,
+    body.dark textarea {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    body.dark .button {
+      background-color: #555;
+    }
+
+    .dark-toggle {
+      margin-top: 20px;
+      cursor: pointer;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Feedback Form</h1>
+
+    <form id="feedbackForm">
+      <label for="name">👤 Your Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="message">💬 Your Message:</label><br />
+      <textarea id="message" name="message" required></textarea><br /><br />
+
+      <button type="submit" class="button">✅ Submit Feedback</button>
+    </form>
+
+    <p id="feedbackThanks" style="display: none; color: green; font-weight: bold; margin-top: 20px;">
+      🎉 Thank you for your feedback!
+    </p>
+
+    <!-- Dark mode button -->
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+
+    <br /><br />
+    <a href="index.html" class="button">⬅️ Back to Home</a>
+  </div>
+
+  <script>
+    // Feedback form logic with localStorage
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      // Save to localStorage
+      const feedbackData = {
+        name: name,
+        message: message,
+        timestamp: new Date().toISOString()
+      };
+
+      let feedbackList = JSON.parse(localStorage.getItem("feedbackList")) || [];
+      feedbackList.push(feedbackData);
+      localStorage.setItem("feedbackList", JSON.stringify(feedbackList));
+
+      // Show thank-you message
+      document.getElementById("feedbackThanks").style.display = "block";
+
+      this.reset();
+    });
+
+    // Toggle dark mode
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
