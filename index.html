@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>MaxStudyApp</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>📚 MaxStudyApp Dashboard</h1>
-    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    <h1>🎓 MaxStudyApp</h1>
+    <button id="darkModeToggle">🌓 Toggle Dark Mode</button>
   </header>
 
-  <main>
-    <!-- Job Application Section -->
-    <section id="job-application">
-      <h2>📋 Job Application Form</h2>
-      <!-- Your job application form content -->
-    </section>
+  <section class="study-tips">
+    <h2>📚 Study Tips</h2>
+    <div class="tips-container">
+      <div class="tip">💡 Stay consistent every day.</div>
+      <div class="tip">🕒 Take regular breaks.</div>
+      <div class="tip">🧠 Practice coding by building small projects.</div>
+      <div class="tip">📖 Review what you’ve learned weekly.</div>
+    </div>
+  </section>
 
-    <!-- Feedback Form -->
-    <section id="feedback-form">
-      <h2>📝 Submit Your Feedback</h2>
-      <form action="submit_feedback.html" method="POST">
-        <textarea placeholder="Your feedback..." required></textarea>
-        <button type="submit">Submit Feedback</button>
-      </form>
-    </section>
+  <section class="motivational-quote">
+    <h2>🌟 Motivational Quote</h2>
+    <p><em>Click the button to get inspired!</em></p>
+    <button id="quoteBtn">🎯 Generate Quote</button>
+    <p id="quoteDisplay"></p>
+  </section>
 
-    <!-- Privacy Message -->
-    <section id="privacy-message">
-      <h2>🔒 Your Privacy</h2>
-      <p>We take your privacy seriously. Your data is secure and will never be shared without permission.</p>
-    </section>
+  <section class="job-application">
+    <h2>🧑🏽‍💼 Job Application</h2>
+    <form>
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" required>
 
-    <!-- Motivational Quote Generator -->
-    <section id="motivational-quote">
-      <h2>💡 Daily Motivation</h2>
-      <p id="quote-text">Loading quote...</p>
-      <button onclick="generateQuote()">🎯 New Quote</button>
-    </section>
-  </main>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
 
-  <script src="script.js"></script>
+      <label for="experience">Experience:</label>
+      <textarea id="experience" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 </body>
 </html>

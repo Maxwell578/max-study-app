@@ -1,25 +1,156 @@
+<!-- Improved study.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Tips</title>
-  <link rel="stylesheet" href="style.css">
+  <title>MaxStudyApp • Study Tips</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- NAVIGATION -->
   <nav>
-  <a href="index.html">🏠 Home</a> |
-  <a href="study.html">📘 Study</a> |
-  <a href="jobs.html">💼 Jobs</a>
-</nav>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">MaxStudyApp</a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="study.html" class="active"><i class="fas fa-book-reader"></i> Study</a></li>
+        <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>Welcome to MaxStudyApp!</h1>
-<p>This is the home page. Choose what you want to do!</p>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <h1><i class="fas fa-lightbulb"></i> Study Tips for Success</h1>
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+    </div>
+  </header>
 
-  <h1>Study Tips</h1>
-  <p>Here are some helpful tips to make your studying more effective!</p>
-  <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- Introduction -->
+    <section class="card intro-card">
+      <h2>Welcome!</h2>
+      <p>Make the most of your study sessions with these proven strategies. Pick and apply the ones that fit your style.</p>
+    </section>
+
+    <!-- Tip Cards -->
+    <section class="tips-grid">
+      <article class="card tip-card">
+        <h3><i class="fas fa-bullseye"></i> Set Clear Goals</h3>
+        <p>Break your study objectives into small, achievable tasks so you know exactly what to focus on each session.</p>
+      </article>
+
+      <article class="card tip-card">
+        <h3><i class="fas fa-calendar-alt"></i> Create a Schedule</h3>
+        <p>Designate specific times for study, breaks, and review. Consistency builds momentum and reduces stress.</p>
+      </article>
+
+      <article class="card tip-card">
+        <h3><i class="fas fa-coffee"></i> Take Smart Breaks</h3>
+        <p>Use the Pomodoro Technique: 25 minutes study, 5 minutes break. Step away from screens to recharge.</p>
+      </article>
+
+      <article class="card tip-card">
+        <h3><i class="fas fa-comments"></i> Ask Questions</h3>
+        <p>Engage peers or instructors when you’re stuck. Explaining concepts aloud deepens your understanding.</p>
+      </article>
+
+      <article class="card tip-card">
+        <h3><i class="fas fa-thumbs-up"></i> Stay Positive</h3>
+        <p>Celebrate small wins, and remind yourself that progress comes from persistence and a growth mindset.</p>
+      </article>
+    </section>
+
+    <!-- Back Link -->
+    <p class="center"><a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 MaxStudyApp • Made with ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Improved jobs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxStudyApp • Job Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">MaxStudyApp</a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="study.html"><i class="fas fa-book-reader"></i> Study</a></li>
+        <li><a href="jobs.html" class="active"><i class="fas fa-briefcase"></i> Jobs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <h1><i class="fas fa-clipboard-list"></i> Apply for a Position</h1>
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="card form-card">
+      <form id="jobForm">
+        <label for="applicantName">Full Name</label>
+        <input type="text" id="applicantName" required>
+
+        <label for="applicantEmail">Email Address</label>
+        <input type="email" id="applicantEmail" required>
+
+        <label for="applyingFor">Position Applying For</label>
+        <input type="text" id="applyingFor" required>
+
+        <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+      </form>
+
+      <div class="actions">
+        <button id="viewApp"><i class="fas fa-eye"></i> View My Application</button>
+        <button id="clearApp"><i class="fas fa-trash"></i> Clear Application</button>
+      </div>
+
+      <div id="storedApp" class="stored-card">
+        <h2><i class="fas fa-file-alt"></i> Stored Application</h2>
+        <p id="appData">No application saved yet.</p>
+      </div>
+
+      <p class="center"><a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 MaxStudyApp • Made by Nhlakanipho Maxwell</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
